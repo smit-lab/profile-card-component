@@ -6,34 +6,6 @@ body {
   @include grid-centering;
   background-color: $darkCyan;
   color: $darkBlue;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    background-image: url(/images/bg-pattern-top.svg);
-    background-position: 0 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: rem(976);
-    height: rem(976);
-    position: absolute;
-    top: rem(-500);
-    left: rem(-200);
-    z-index: -9999;
-  }
-  &::after {
-    content: '';
-    background-image: url(/images/bg-pattern-bottom.svg);
-    background-position: 0 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: rem(976);
-    height: rem(976);
-    position: absolute;
-    bottom: rem(-550);
-    right: rem(-200);
-    z-index: -9999;
-  }
 }
 
 .card {
@@ -106,36 +78,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    overflow: hidden !important;
-    &::before {
-      content: '';
-      background-image: url(/images/bg-pattern-top.svg);
-      background-position: 0 0;
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: rem(622);
-      height: rem(622);
-      position: absolute;
-      top: rem(-200);
-      left: rem(-400);
-      z-index: -9999;
-    }
-    &::after {
-      content: '';
-      background-image: url(/images/bg-pattern-bottom.svg);
-      background-position: 0 0;
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: rem(622);
-      height: rem(622);
-      position: absolute;
-      bottom: rem(-200);
-      right: rem(-400);
-      z-index: -9999;
-    }
-  }
-  
   .card {
     width: rem(326);
 
