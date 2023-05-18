@@ -1,0 +1,146 @@
+@import "reset";
+@import "globals";
+@import "function";
+
+body {
+  @include grid-centering;
+  background-color: $darkCyan;
+  color: $darkBlue;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    background-image: url(/images/bg-pattern-top.svg);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: rem(976);
+    height: rem(976);
+    position: absolute;
+    top: rem(-500);
+    left: rem(-200);
+    z-index: -9999;
+  }
+  &::after {
+    content: '';
+    background-image: url(/images/bg-pattern-bottom.svg);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: rem(976);
+    height: rem(976);
+    position: absolute;
+    bottom: rem(-550);
+    right: rem(-200);
+    z-index: -9999;
+  }
+}
+
+.card {
+  width: rem(350);
+  border-radius: rem(15);
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+
+  &-bg {
+    width: rem(350);
+    height: rem(140);
+    margin-bottom: rem(64.3);
+  }
+
+  &__person-img {
+    width: rem(96);
+    height: rem(96);
+    border-radius: 50%;
+    border: 5px solid #fff;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__person-name {
+    font-size: rem(18);
+    line-height: 1.22;
+    font-weight: 700;
+    margin-bottom: rem(8);
+
+    & span {
+      color: $grayishBlue;
+      font-weight: 400;
+      padding-left: rem(8.5);
+    }
+  }
+
+  &__city {
+    font-size: rem(14);
+    line-height: 1.214;
+    color: $grayishBlue;
+    margin-bottom: rem(28);
+  }
+}
+
+.card__stats {
+  @include flex;
+  justify-content: space-around;
+  padding: rem(24) 0 rem(27);
+  border-top: 1px solid #e8e9ec;
+
+  &-txt {
+    & > h1 {
+      font-size: rem(18);
+      line-height: 1.22;
+      font-weight: 700;
+      margin-bottom: rem(9);
+    }
+
+    & > p {
+      font-size: rem(10);
+      line-height: 1.2;
+      letter-spacing: 1.5px;
+      color: $grayishBlue;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden !important;
+    &::before {
+      content: '';
+      background-image: url(/images/bg-pattern-top.svg);
+      background-position: 0 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: rem(622);
+      height: rem(622);
+      position: absolute;
+      top: rem(-200);
+      left: rem(-400);
+      z-index: -9999;
+    }
+    &::after {
+      content: '';
+      background-image: url(/images/bg-pattern-bottom.svg);
+      background-position: 0 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: rem(622);
+      height: rem(622);
+      position: absolute;
+      bottom: rem(-200);
+      right: rem(-400);
+      z-index: -9999;
+    }
+  }
+  
+  .card {
+    width: rem(326);
+
+    &-bg {
+      width: rem(326);
+    }
+  }
+}
